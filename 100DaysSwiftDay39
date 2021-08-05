@@ -1,0 +1,3 @@
+GCD grand central dispatch. Доработка проекта 7 в части добавления в проект multythreading. Добавляется при помощи performSelector(inBackground) and performSelector(onMainThread)
+Dispatch.main.async{} Dispatch.global(QoS:...).async{}
+https://github.com/igorpolousov/Project-9-White-House-petitions-with-GCD-option
