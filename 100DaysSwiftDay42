@@ -1,0 +1,12 @@
+Day 42. Project 10 part 1. 
+
+UICollectionView and UICollectionViewCell
+
+Что было сделано:
+StoryBoard - было добавлено UICollectionView embed in Navigation controller. Так же была добавлена ячейка с идентификатором Person  на эту ячейку так же были добавлены и указаны размеры imageView и labelView. 
+
+Были созданы два файла. 
+ViewController - поскольку collection controller работает по такому же принципу как и table controller в файл были добавлены 2 метода: numberOfItemsInSection - который указывает сколько будет ячеек в коллекции и cellForItemAtIndexPath. Есть отличие от таблицы. Поскольку для view  в ячейке был создан отдельный файл с отдельным классом стало необходимым сделать type casting чтобы стало возможным получить доступ к imageView name(label) в другом файле
+PersonCell -  были добавлены 2 outlets: name - labelView и imageView - imageView
+
+Ссылка на код урока на GitHub: https://github.com/igorpolousov/Project-10
