@@ -1,0 +1,16 @@
+Day 44. Project 10, part 3. Challenge. 
+
+В этом уроке предлагается выполнить самостоятельное задание. Нужно сделать 3 вещи:
+
+1. Изменить UIAlertController чтобы мог выбрать переименовать изображение или удалить его. Так же предлагается сделать второй UIAlertController в дополнение. Как это сделать? Может применить double tap?
+2. Сделать версию приложения для телефона вместо симулятора устройства. Для этого использовать picker.sourceType = .camera. Чтобы проверить используется симулятор или камера предлагается использовать UIPickerImageController. isSourceTypeAvalible()
+3. Изменить проект 1. Можно сделать его еще раз. В этот раз использовать в проекте collection view вместо table view
+
+Что сделано:
+Создаём новую ветку в репозитории с именем challenge
+1. В этом задании решено в метод didSelectItemAt index path добавить еще одну кнопку на уже существующий Алерт контроллер. 
+2. Сделано через условие if else при помощи UIPickerImageController.isSourceTypeAvalible() . camera .photoLabrary
+3. Создано отдельным приложением
+
+Ссылки на код урока на GitHub: https://github.com/igorpolousov/Project-10/tree/Challenge
+https://github.com/igorpolousov/Project10.Challenge---Task3
