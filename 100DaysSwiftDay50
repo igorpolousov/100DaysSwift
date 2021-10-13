@@ -1,0 +1,33 @@
+Day 50. Project 10-12 Challenge. 
+
+Задания:
+    Нужно будет совместить два проекта в одном. Нужно чтобы:
+- Пользователь мог делать фотографии объектов, 
+- Чтобы была возможность добавлять подписи к фотографиям и затем эти фотографии должны быть показаны в table view. 
+- При нажатии на картинку она должна быть показана в новом окне. Новом view controller. 
+     Пол предлагает взять для примера проект 1 и проект 12.  Можно еще добавить для примера проект 10. 
+
+Что нужно ?
+Story Board:
++ table view controller + assign ViewController file and change class name on UITableViewController + Cell identifier as Cell+ text size to 20
++ navigation controller is initial view controller
++ view controller with identifier Detail
++ imageView to view controller + constraints align to X and Y Leading edge + top edge + scale to fill
+Files:
+Create Picture file with Picture struct
++ DetailViewController + imageView outlet
++ UIPickerControllerDelegate + UInavigationControllerDelegate for picker controller
++ empty array pictures of Picture
++ navigation item as left button with #selector addNewPhoto()
++ numberOfRows
++ cellForRowAt
++ addNewPhoto @objc func for picker controller
++ didFinishPickingMediaWithInfo + alert controller for rename picked image
++ getDocumentDirectory for show path for save data in user documents directory
++didSelectRowAt for instantiateViewController for passing data to detailViewController
++ save()
++ loadData()
+
+DetailViewController + set title, + set imageToLoad for imageView 
+
+https://github.com/igorpolousov/MilestoneProjectDay50
