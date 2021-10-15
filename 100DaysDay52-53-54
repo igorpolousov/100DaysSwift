@@ -1,0 +1,48 @@
+Day 52 - 53 - 54. Project 13. Part one.  Instafilter. 
+
+
+Проекты становятся побольше. Или я просто начал замечать больше вещей)
+
+В первой части был сделан интерфейс при помощи story board. View controller was wrapped to navigation controller. 
+Были добавлены  view + imageView + label (intensity) + slider + change filter button + save button. Были добавлены размеры для view + image view + buttons. Остальные constraints были добавлены при помощи suggested constraints. 
+
++ Были добавлены метод importPicture()  в котором разместился uiPickerController и были добавлены два протокола UIPickerControllerDelegate UINavigationControllerDelegate
+
+На этом работы по день 52 были завершены. Очень короткий получился урок. 
+
+Day 53. CIContext, CIFilter. 
+CIContext  - это метод core image по анализу и обработке изображений
+CIFilter - это инструмент для обработки изображений при помощи фильтра. 
+
+Данный урок оказался самым большим из проекта по написанию кода. 
+Были добавлены outlets для imageView, Intensity slider и были добавлены переменные currentImage: UIImage!, context: CIContext!, currentFilter: CIFilter!
+
+viewDidLoad() были добавлены название для приложения и добавлена кнопка navigation bar и заданы начальные значения для созданных переменных. 
+
+Добавлен метод didFinishPickingMediaWithInfo в котором после выбора изображения были присвоены значения для currentFilter.setValue - это само изображение и какой ключ использовать для выбора фильтра. 
+
+Добавлена функция changeFilter которая вызывается при нажатии на кнопку changeFilter и которая вызывает alert controller со списком фильтров. Далее добавлено действие по выбору фильтра и handler setFilter. 
+
+Далее добавлен popoverPresentaionController  для того чтобы если использовалось приложение на планшете, то область в которой будет показываться alert controller была привязана к кнопке change filter
+
+Добавлена функция setFilter которая принимает значение action: UIAlertAction в которой задаётся новые значения для current filter и currentImage
+
+Добавлен метод для записи обработанного фото UIImageWriteToSavePhotosAlbum с #selector imageSave
+Предварительно в файле info.plist была добавлена строка privacy photo library additions usage description - для запроса у пользователя разрешения сохранять фото в фото альбом пользователя. 
+
+Добавленна функция applyProcessing() в которой устанавливается проверка. Соотвественно выбранного ключа для фильтра выставляются соотвествующие значения для фильтра
+
+Далее добавлена функция imageSave в которой задан параметр didFinishSavingWithError который принимает параметр Error и если произошла ошибка записи или файл сохранён успешно, то показывается соответсвующий alert controller
+
+Day 54. Challenge
+1. Сделать чтобы кнопка сохранить показывала ошибку если не было картинки в imageView
+Добавлен UIAlert Controller в функцию save() при проверке guard на наличие изображения в imageView
+2. Сделать так чтобы кнопка change filter показывала название фильтра
+Добавлен outlet для filterLabel, и в функции setFilter(), после выбора фильтра, был добавлено присвоение значения filterLabel.text = actionTitle
+3. Добавить большее количество слайдеров с желаемыми свойствами
+Добавлен отдельный слайдер для sepia filter. 
+
+
+Было бы хорошо добавить промежуточное сохранение, потому что при выборе нового фильтра изображение возвращается к начальному, полученному при работе с UIPicker
+
+Ссылка на код урока: https://github.com/igorpolousov/Project13
