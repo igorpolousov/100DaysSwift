@@ -1,0 +1,32 @@
+Day 60-61. Project 16. MapKit. 
+
+Создали стандартное приложение. В приложении при помощи storyBoard. Добавлены две вещи: navigation controller и mapKit view. 
+
++ Был добавлен в storyBoard delegate от mapView к viewController. 
++ import MapKit
++ были добавлены аннотации. Annotations. - это объекты содержащие title, subtitle and position.  
++ Далее были добавлены столицы городов как аннотации
+
+Потом было добавлен еще один стандартный метод. И еще несколько переменных в этом методе, с которыми нужно еще разобраться!!!!
+
+Challenge!
+1. Сделать typecasting значения dequeueReusableAnnotationView() к типу MKPinAnnotationView() и потом поменять значение его свойства pinTintColour на свой любимый цвет. 
+
+Добавлена одна строчка в методе viewFor annotationView?.pinTintColor = .blue
+
+2. Добавить UIAlertController, чтобы пользователь мог выбрать в каком виде он хочет карту. Для этого используется свойство mapType  . satellite  для примера. 
+
++ кнопка в navigation controller + #selector
++ UIAlertController + handler
++ func setMapView() для #selector
++ func setMapType() для handler
+
+3. Изменить callout button таким образом чтобы при нажатии вызывался webView и показывалась информация пользователю из wiki для выбранного города. 
+
++ wiki file class UIViewController + WKNavigationDelegate
++ viewController storyBoard id wiki
++ WKWebView in func loadView()
++  webView.webView.load(URLRequest(url: url))
++ html to Capital class
+
+Ссылка на урок GitHub: https://github.com/igorpolousov/Project16MapKit/tree/Challege
