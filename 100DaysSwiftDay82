@@ -1,0 +1,32 @@
+Days 82. Milestone project. Extensions. Projects 22-24. 
+
+Challenge:
+1. Добавить к классу UIView метод bounceOut(duration:) - этот метод должен уменьшить изображение до 0.0001 через заданное количество секунд
+
+extension UIView {
+    func bounceOut(duration: TimeInterval) {
+        UIView.animate(withDuration: duration) {
+            self.transform = CGAffineTransform(scaleX: 0.0001, y: 0.0001)
+        }
+    }
+}
+
+2. Расширить структуру Int методом times() который будет выполнять код в замыкании столько раз сколько будет указано в числе. Например 5.times { print(“Hello”)} - должно быть напечатано 5 раз
+extension Int {
+    func times(handler: () -> Void) {
+        guard self > 0 else { return }
+        for _ in 1 ... self {
+            handler()
+        }
+    }
+}
+3. Добавить к структуре массивов remove(item:) метод который в случае обнаружения в массиве сущности с одним и тем же значением два раза уберет только первую. Нужно будет добавить comparable. 
+extension Array where Element: Comparable {
+    mutating func remove(item: Element) {
+        if let index = self.firstIndex(of: item) {
+            remove(at: index)
+        }
+    }
+}
+
+Ссылка на урок в GitHub: https://github.com/igorpolousov/100DaysSwift/blob/main/MileStoneProjects_22-24.playground.zip
